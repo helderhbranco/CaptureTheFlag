@@ -23,3 +23,29 @@ Siga as instruções apresentadas no console para gerar um novo mapa, selecionar
 Este projeto foi desenvolvido como parte da avaliação da disciplina de Estruturas de Dados. Todos os direitos reservados.
 
 Divirta-se jogando Capture the Flag!
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+# Capture the Flag - Practical Data Structures Game
+
+This is a group project for the Data Structures course. The Capture the Flag game aims to apply the concepts learned about data structures in solving a practical problem. The data structures used were developed throughout the course, starting from the provided interfaces. The use of external libraries was restricted and required approval from the instructors.
+
+## How to Play
+
+1. Clone this repository.
+2. Open the terminal and navigate to the project directory.
+3. Run the command `./gradlew build` to compile the code and download necessary dependencies.
+4. Run the command `./gradlew run` to start the game.
+
+Follow the instructions displayed in the console to generate a new map, select flags, and assign algorithms to bots.
+
+## Technologies Used
+
+- Language: Java
+- Data Structures: Network, Queue, LinkedLists, Stack, MinHeap, MaxHeap, etc.
+
+## Notes
+
+This project was developed as part of the assessment for the Data Structures course. All rights reserved.
+
+Enjoy playing Capture the Flag!
+
