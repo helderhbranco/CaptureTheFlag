@@ -1,5 +1,4 @@
 # Capture the Flag - Jogo Prático de Estruturas de Dados
-##PT-PT
 
 Este é um projeto desenvolvido em grupo para a disciplina de Estruturas de Dados. O jogo Capture the Flag tem como objetivo principal aplicar os conceitos aprendidos sobre estruturas de dados na resolução de um problema prático.
 As estruturas de dados utilizadas foram desenvolvidas no decorrer da UC partindo das interfaces que nos eram facilitadas, o uso de bibliotecas externas era restrinbgido pela aprovação dos professores.
@@ -27,7 +26,7 @@ Divirta-se jogando Capture the Flag!
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 # Capture the Flag - Practical Data Structures Game
-##EN
+
 This is a group project for the Data Structures course. The Capture the Flag game aims to apply the concepts learned about data structures in solving a practical problem. The data structures used were developed throughout the course, starting from the provided interfaces. The use of external libraries was restricted and required approval from the instructors.
 
 ## How to Play
