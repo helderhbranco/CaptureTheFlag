@@ -1,0 +1,77 @@
+image: gradle:8.5.0-jdk17-alpine
+
+stages:
+  - build
+  - test
+  - coverage
+  - pmd_check
+
+variables:
+  GIT_SSL_NO_VERIFY: "true"
+
+before_script:
+  - echo "Start Automated Build"
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - chmod +x ./gradlew
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+build:
+  stage: build
+  script:
+    - ./gradlew assemble
+  tags:
+    - docker-runner-estg
+  artifacts:
+    paths:
+      - build/libs/*.jar
+    expire_in: 1 week
+
+test_black_box:
+  stage: test
+  tags:
+    - docker-runner-estg
+  script:
+    - ./gradlew test
+  artifacts:
+    paths:
+      - build/test-results/test/TEST-*.xml
+
+test_white_box:
+  stage: test
+  tags:
+    - docker-runner-estg
+  script:
+    - ./gradlew jacocoTestReport
+  artifacts:
+    paths:
+      - build/reports/jacoco*
+
+coverage_report:
+  stage: coverage
+  tags:
+    - docker-runner-estg
+  script:
+    - echo "Calculating code coverage..."
+    - ./gradlew jacocoTestCoverageVerification
+  artifacts:
+    paths:
+      - build/reports/jacocoHtml/index.html
+  dependencies:
+    - test_white_box
+
+pmd_check:
+  stage: test
+  tags:
+    - docker-runner-estg
+  script:
+    - ./gradlew pmdMain
+  artifacts:
+    paths:
+      - build/reports/pmd/main.xml
+
+after_script:
+  - echo "End Automated Build"
